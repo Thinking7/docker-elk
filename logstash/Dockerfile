@@ -4,4 +4,4 @@ ARG ELK_VERSION
 FROM docker.elastic.co/logstash/logstash:${ELK_VERSION}
 
 # Add your logstash plugins setup here
-RUN logstash-plugin install logstash-input-redis
+RUN logstash-plugin install logstash-input-redis logstash-output-tcp
