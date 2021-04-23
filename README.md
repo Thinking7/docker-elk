@@ -1,3 +1,10 @@
+### ELK说明 
+* 清理
+ 1. 默认情况下，Elasticsearch数据保留在卷内。正常情况不要使用为了完全关闭堆栈并删除所有持久数据，请使用以下Docker Compose命令：
+ > $ docker-compose down -v
+
+
+* 原项目地址：https://github.com/deviantony/docker-elk
 # Elastic stack (ELK) on Docker
 
 [![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)

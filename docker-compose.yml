@@ -23,6 +23,7 @@ services:
       # Use single node discovery in order to disable production mode and avoid bootstrap checks
       # see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
+      TZ: $ELK_TIMEZONE
     networks:
       - elk
 
@@ -45,9 +46,11 @@ services:
       - "5000:5000/udp"
       - "9600:9600"
       - "8010:8010/udp"
+      - "8011:8011/udp"
 
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      TZ: $ELK_TIMEZONE
     networks:
       - elk
     depends_on:
@@ -69,7 +72,8 @@ services:
       - elk
     depends_on:
       - elasticsearch
-
+    environment:
+      TZ: $ELK_TIMEZONE
 networks:
   elk:
     driver: bridge
